@@ -41,7 +41,9 @@ void got_packet(u_char *args, const struct pcap_pkthdr *header,
 	int payload_len = header -> caplen -(sizeof(struct ethheader) + ip_header_len + tcp_header_len);
 	if(payload_len) {
 		printf("\nMESSAGE : \n");
-		printf("\n%.*s",payload_len,payload);
+		int avg_len = (payload_len > 150) ? 150 : payload_len;
+		printf("\n%.*s",avg_len,payload);
+		printf(".....too long :("\n);
 	}//http 출력 구문 괄호
 
 
