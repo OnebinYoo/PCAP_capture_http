@@ -43,7 +43,7 @@ void got_packet(u_char *args, const struct pcap_pkthdr *header,
 		printf("\nMESSAGE : \n");
 		int avg_len = (payload_len > 150) ? 150 : payload_len;
 		printf("\n%.*s",avg_len,payload);
-		printf(".....too long :("\n);
+		printf(".....too long :( \n");
 	}//http 출력 구문 괄호
 
 
